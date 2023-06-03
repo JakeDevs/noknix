@@ -1,0 +1,73 @@
+{
+	"layer": "top",
+	"modules-left": ["wlr/workspaces", "mpris", "custom/weather",],
+	"modules-center": ["wlr/taskbar"],
+	"modules-right": ["network", "pulseaudio", "cpu", "custom/gpu-usage", "memory", "clock", "tray",],
+	"mpris": {
+	"format": "{player_icon} {dynamic}",
+	"format-paused": "{status_icon} <i>{dynamic}</i>",
+	"player-icons": {
+		"default": "▶",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "⏸"
+	},
+	},
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 1,
+		"format": "{icon} {volume}%",
+		"format-icons": {
+			"default": ["奄", "奔", "墳"]
+		}
+	},
+	"network": {
+		"tooltip": false,
+		"format-wifi": " {essid} {ipaddr}",
+		"format-ethernet": " {ipaddr}"
+	},
+	"cpu": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval": 1,
+	},
+
+	"custom/gpu-usage": {
+
+		"exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+		"format": "󰾲 : {}%",
+		"return-type": "",
+  		"interval": 1,
+
+	},
+
+	"clock": {
+    	"interval": 1,
+    	"format": "{:%I:%M}",
+	},
+	"memory": {
+		"tooltip": false,
+		"format": " {}%",
+		"interval": 1,
+	},
+	"tray": {
+		"spacing": 10
+	},
+	"custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "$HOME/.config/waybar/scripts/weather.py",
+        "return-type": "json"
+    },
+	"wlr/workspaces": {
+		"on-click": "activate",
+	},
+
+	"wlr/taskbar": {
+		"on-click": "activate",
+
+	}
+}
+
