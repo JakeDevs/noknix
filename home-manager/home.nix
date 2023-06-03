@@ -185,7 +185,7 @@
 
     ".config/dunst".source = ../home-manager/dotfiles/dunst;
 
-   # ".config/waybar".source = ./home-manager/dotfiles/waybar;
+    # ".config/waybar".source = ./home-manager/dotfiles/waybar;
 
     "/home/jake/.zshrc".source = ../home-manager/dotfiles/.zshrc;
 
