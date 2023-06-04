@@ -72,7 +72,7 @@
     gnumake
     scdoc
     wl-clipboard
-    vscode
+    vscode-fhs
     hyprland-protocols
     hyprpaper
     hyprpicker

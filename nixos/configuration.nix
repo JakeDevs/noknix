@@ -140,6 +140,7 @@
     catppuccin-cursors
     rustc
     cargo
+    gnat13
   ];
 
   environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
