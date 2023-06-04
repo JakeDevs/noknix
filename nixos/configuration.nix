@@ -54,22 +54,20 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.allowed-users = [ "jake" ];
   services.getty.autologinUser = "jake";
-  programs.hyprland.enable = true;
-  programs.hyprland.nvidiaPatches = true;
   programs.xwayland.enable = true;
   programs.firefox.enable = true;
   programs.steam.enable = true;
   programs.gamemode.enable = true;
   programs.gamescope.enable = true;
+  programs.hyprland.enable = true;
   programs.gamescope.capSysNice = true;
   programs.corectrl.enable = true;
   qt.platformTheme = "gtk";
   services.flatpak.enable = true;
+  xdg.portal.wlr.enable = true;
 
   nix.settings.auto-optimise-store = true;
   xdg.portal.enable = true;
-  xdg.portal.wlr.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   xdg.portal.xdgOpenUsePortal = true;
   security.polkit.enable = true;
 
@@ -136,18 +134,7 @@
 
   environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
 
-  nixpkgs = {
-    overlays = [
-
-      (self: super: {
-        waybar = super.waybar.overrideAttrs (oldAttrs: {
-          mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-        });
-      })
-
-    ];
-    config = { allowUnfree = true; };
-  };
+    nixpkgs.config = { allowUnfree = true; };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

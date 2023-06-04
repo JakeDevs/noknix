@@ -22,19 +22,17 @@
     "inode/directory" = [ "pcmanfm.desktop" ];
     "x-scheme-handler/http" = [ "firefox.desktop" ];
     "x-scheme-handler/https" = [ "firefox.desktop" ];
+    "x-scheme-handler/about" = "firefox.desktop";
+    "x-scheme-handler/unknown" = "firefox.desktop";
   };
 
   #User options
-  nixpkgs.config.allowUnfree = true;
   xsession.enable = true;
   xsession.windowManager.command = "…";
   programs.mangohud.enable = true;
   programs.firefox.enable = true;
   qt.enable = true;
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
-  };
 
   services.network-manager-applet.enable = true;
 
@@ -132,6 +130,7 @@
     pkg-config
     sqlite
     openssl
+    bottom
     #anchor		
   ];
 

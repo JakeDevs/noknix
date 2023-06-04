@@ -21,4 +21,4 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice wait"2" lucid
 zinit light zsh-users/zsh-completions
 
-alias regen="/home/jake/NokNok/regen.sh"
+alias regen="/home/jake/noknix/regen.sh"
