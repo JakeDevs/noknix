@@ -29,12 +29,6 @@
   hardware.opengl.driSupport32Bit = true;
   hardware.nvidia.powerManagement.enable = true;
 
-  #Waydroid
-  virtualisation = {
-    waydroid.enable = true;
-    lxd.enable = true;
-  };
-
   sound.enable = true;
   services.pipewire.enable = true;
   services.pipewire.audio.enable = true;
@@ -82,11 +76,6 @@
   services.throttled.enable = true;
   hardware.cpu.intel.updateMicrocode = true;
 
-  virtualisation.podman.enable = true;
-  virtualisation.podman.enableNvidia = true;
-  virtualisation.podman.dockerSocket.enable = true;
-  virtualisation.podman.dockerCompat = true;
-
   programs.thunar.enable = true;
   programs.thunar.plugins = with pkgs.xfce; [
     thunar-volman
@@ -120,7 +109,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
-    rustup
     git
     btop
     solaar
@@ -141,6 +129,9 @@
     rustc
     cargo
     gnat13
+    alsa-oss
+    alsa-lib
+    alsa-tools
   ];
 
   environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };

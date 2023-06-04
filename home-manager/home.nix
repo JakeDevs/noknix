@@ -65,14 +65,13 @@
     xorg.xeyes
     glib
     gsettings-desktop-schemas
-    scarab
     easyeffects
     tidal-hifi
     lutris
-    gnumake
     scdoc
     wl-clipboard
     vscode-fhs
+    gnumake42
     hyprland-protocols
     hyprpaper
     hyprpicker
@@ -129,6 +128,10 @@
     goverlay
     libreoffice-fresh
     eww-wayland
+    pkg
+    pkg-config
+    sqlite
+    openssl
     #anchor		
   ];
 
