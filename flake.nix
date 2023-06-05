@@ -14,17 +14,20 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }: {
+  outputs = { nixpkgs, home-manager, ironbar, ... }@inputs: {
 
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      specialArgs.inputs = inputs;
 
       modules = [
         ./nixos/configuration.nix
-        home-manager.nixosModules.home-manager {
+        home-manager.nixosModules.home-manager
+        {
           home-manager = {
             users.jake = ./home-manager/home.nix;
             useUserPackages = true;
             useGlobalPkgs = true;
+
           };
         }
       ];

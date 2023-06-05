@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -32,7 +32,6 @@
   programs.mangohud.enable = true;
   programs.firefox.enable = true;
   qt.enable = true;
-
 
   services.network-manager-applet.enable = true;
 

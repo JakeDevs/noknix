@@ -29,6 +29,9 @@
   hardware.opengl.driSupport32Bit = true;
   hardware.nvidia.powerManagement.enable = true;
 
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
+
   sound.enable = true;
   services.pipewire.enable = true;
   services.pipewire.audio.enable = true;
@@ -107,6 +110,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
+    virt-manager
     git
     btop
     solaar
@@ -134,7 +138,7 @@
 
   environment.sessionVariables = { NIXOS_OZONE_WL = "1"; };
 
-    nixpkgs.config = { allowUnfree = true; };
+  nixpkgs.config = { allowUnfree = true; };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
